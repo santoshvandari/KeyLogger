@@ -118,7 +118,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## **Author**
 **Santosh Bhandari**  
-> Web Developer & Android App Developer  
 > [GitHub](https://github.com/santoshvandari)  
 
 ---
